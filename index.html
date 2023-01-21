@@ -14,19 +14,23 @@
         <div id="container">
             <h1>Pé na estrada!</h1><br>
             <h2>Vai pegar estrada? Calcule quanto vai gastar!</h2><br>
+            
             <p>Quantos km por litro o seu carro faz?</p>
-            <input name="km_litro" type="number" id="km_litro" class="input" required>
+            <div class="divinput"><input name="km_litro" type="number" id="km_litro" class="input" required></div>
+            
             <P>Quantos km você vai rodar?</P>
-            <input name="total_viagem" type="number" id="total_viagem" class="input" required>
+            <div class="divinput"><input name="total_viagem" type="number" id="total_viagem" class="input" required></div>
+            
             <p>Qual a media de preço do combustivel no seu estado?</p>
-            <input type="number" name="preco_combustivel" id="preco_combustivel" class="input" required> <br><br>
-            <input type="button" value="Calcular" id="botao" onclick="calcular()" required>
+            <div class="divinput"><input type="number" name="preco_combustivel" id="preco_combustivel" class="input" required></div> <br><br>
+
+            <div class="divinput"><input type="button" value="calcular" id="botao" onclick="calcular()" required></div>
             <div id="res"></div>
         </div>
     </main>
     
     <script>
-        function calcular(){
+        function calcular(){ 
             var litros = document.getElementById('km_litro')
             var distancia = document.getElementById('total_viagem')
             var combustivel = document.getElementById('preco_combustivel')
@@ -36,9 +40,8 @@
             var gasto = (d / l) * p
             var res = document.getElementById('res')
             res.innerHTML = `O valor a ser gasto com combustivel é de ${gasto.toFixed(2)} reais!`
+            
         }
-       
-        
     </script>
 </body>
 </html>
